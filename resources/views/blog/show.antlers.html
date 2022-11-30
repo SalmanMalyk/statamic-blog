@@ -1,0 +1,76 @@
+<article class="max-w-7xl mx-auto px-3">
+    <header class="mx-auto max-w-7xl text-center content">
+        <img
+            class="rounded-xl mb-3"
+            src="{{ $hero_image }}"
+            alt="{{ $hero_image:alt }}"
+        />
+
+        {{ if tags }}
+        <div
+            class="flex sm:flex-row flex-col justify-between items-center overflow-hidden my-5"
+        >
+            <div class="flex flex-row">
+                {{ tags }}
+                <a
+                    href="{{ url }}"
+                    class="px-6 py-1 mr-2 no-underline font-medium bg-theme-s bg-opacity-80 hover:bg-opacity-100 text-gray-700"
+                >
+                    #{{ title }}
+                </a>
+                {{ /tags }}
+            </div>
+        </div>
+        {{ /if }}
+
+        <h1 class="text-left mb-4">{{ $title }}</h1>
+
+        <div class="flex flex-col text-left text-sm">
+            <!-- author -->
+            {{ if $ author }}
+            <img
+                src="{{ $author:avatar ?? $author:email | gravatar(160) }}"
+                class="h-28 w-28 my-0 mb-4 rounded-full"
+            />
+            <div class="mb-3">
+                <a
+                    class="font-bold no-underline"
+                    href="/authors/{{ author:handle }}"
+                >
+                    <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-slate-600 to-slate-900"
+                    >
+                        By {{ $author:name }}
+                    </span>
+                </a>
+            </div>
+            {{ /if }}
+            <!-- posted date -->
+            <time datetime="{{ $date | format('Y-m-d') }}">{{ $date }}</time>
+        </div>
+
+        <!-- {{ $intro }} -->
+    </header>
+    <section class="max-w-7xl mx-auto py-6 lg:py-12 content">
+        <div class="grid overflow-hidden md:grid-cols-4 grid-cols-1 gap-6">
+            <!-- main content -->
+            <div class="md:col-span-3">
+                {{ main_content }} {{ if $type == "text" }} {{ $text }} {{
+                elseif $type == "code_block" }}
+                <pre
+                    class="language-{{ $mode ?? 'php' }} rounded"
+                ><code>{{ $code }}</code></pre>
+                {{ elseif $type == "image" }}
+                <figure>
+                    <img src="{{ $image }}" alt="{{ $caption }}" />
+                    <figcaption>{{ $caption }}</figcaption>
+                </figure>
+                {{ /if }} {{ /main_content }}
+            </div>
+            <!-- sidebar -->
+            <div class="md:col-span-1">{{ partial:blog/sidebar }}</div>
+        </div>
+    </section>
+
+    {{ if $settings:show_signup }} {{ partial:sign-up}} {{ /if }}
+</article>

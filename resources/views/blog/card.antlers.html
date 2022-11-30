@@ -1,0 +1,54 @@
+<div class="col-span-1 md:mb-10">
+    <div
+        class="relative h-56 w-full flex items-end justify-start text-left bg-cover bg-center rounded-xl"
+        style="background-image: url({{ glide:hero_image }})"
+    >
+        <div
+            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-slate-800"
+        ></div>
+        <main class="p-5 z-10">
+            {{ if tags }}
+            <div
+                class="flex sm:flex-row flex-col justify-between items-center overflow-hidden"
+            >
+                <div class="flex flex-row mt-5">
+                    {{ tags }}
+                    <a
+                        href="{{ url }}"
+                        class="px-4 py-1 mr-2 text-xs font-medium bg-theme-s bg-opacity-80 hover:bg-opacity-100 text-gray-700"
+                    >
+                        #{{ title }}
+                    </a>
+                    {{ /tags }}
+                </div>
+            </div>
+            {{ /if }}
+        </main>
+    </div>
+</div>
+<div class="col-span-2 md:mb-10">
+    <div class="flex flex-col h-full">
+        <a
+            href="{{ url }}"
+            class="overflow-hidden font-bold text-2xl hover:text-blue-500 hover:underline mb-10"
+        >
+            {{ title }}
+        </a>
+
+        <section>{{ intro }}</section>
+
+        <div class="flex text-slate-500 justify-start items-center mt-auto">
+            {{ if author }}
+            <div class="flex items-center">
+                <img
+                    src="{{ $author:avatar ?? $author:email | gravatar(160) }}"
+                    class="h-5 w-5 my-0 rounded-full mr-2 rounded-xl"
+                />
+                <a href="/authors/{{ $author:handle }}">{{ author:name }}</a>
+            </div>
+            <span class="mx-1">—</span>
+            {{ /if }}
+            <i>{{ $date }}</i>
+        </div>
+    </div>
+</div>

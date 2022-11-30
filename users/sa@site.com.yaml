@@ -1,0 +1,15 @@
+super: true
+name: 'Super Admin'
+id: 433e8063-5665-47b6-ad67-6f3ed873b3bb
+password_hash: $2y$10$rk1Tfup2v5LXrGlp1xbITuPm26E.12USlwE3kbVqLHsGPo1mSIvda
+preferences:
+  collections:
+    blog:
+      columns:
+        - title
+        - slug
+        - date
+        - author
+        - featured
+        - tags
+        - related_posts

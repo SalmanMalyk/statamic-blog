@@ -1,0 +1,13 @@
+<article class="max-w-7xl mx-auto px-3">
+    <header>
+        <h1 class="text-2xl uppercase font-semibold tracking-wider my-4">
+            Tag "{{ name}}" posts:
+        </h1>
+    </header>
+
+    {{ entries as="posts" paginate="10" sort="date:desc" }}
+    <section class="grid overflow-hidden grid-cols-3 gap-6">
+        {{ posts }} {{ partial:blog/card :oversized="first" }} {{ /posts }}
+    </section>
+    {{ /entries }}
+</article>
