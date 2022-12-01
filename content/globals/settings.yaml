@@ -1,7 +1,7 @@
 title: Settings
 data:
   site_name: Tworeach
-  site_logo: logo.svg
+  site_logo: logo.png
   personality: casual
   show_signup: false
   social:

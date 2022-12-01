@@ -1,33 +1,74 @@
-<nav x-data="{searching: false}">
+<div
+    x-data="{searching: false, open: false}"
+    class="max-w-7xl mx-auto pt-5 px-5 sm:px-3 text-gray-700 bg-white"
+>
     <div
-        class="max-w-7xl mx-auto px-3 mt-5 flex items-center justify-between h-36"
+        class="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row"
     >
-        <a href="/" x-show="! searching">
-            <img
-                class="img-fluid w-28 mt-3"
-                src="{{ settings:site_logo }}"
-                alt="{{ settings:site_name }}"
-            />
-        </a>
-        <button
-            class="hover:text-hot-pink transition-all duration-100 outline-none"
-            @click="searching = true; $nextTick(() => { $refs.search.focus() })"
-            aria-label="Search the site"
+        <div class="flex flex-row items-center justify-between">
+            <a
+                href="/"
+                class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
+            >
+                <img
+                    class="w-14 sm:w-16 md:w-20 object-cover"
+                    src="{{ settings:site_logo }}"
+                    alt="{{ settings:site_name }}"
+                />
+            </a>
+            <button
+                class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+                @click="open = !open"
+            >
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path
+                        x-show="!open"
+                        fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                        clip-rule="evenodd"
+                    ></path>
+                    <path
+                        x-show="open"
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+        <nav
+            :class="{'flex': open, 'hidden': !open}"
+            class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row"
+            x-show="!searching"
         >
-            {{ svg src="search-{settings:personality}" class="w-6 h-6" }}
-        </button>
-        <form action="/search" x-show="searching" x-cloak class="flex-1">
-            <input
-                name="q"
-                type="text"
-                class="w-full outline-none px-2 py-1 ml-3"
-                placeholder="Search for stuff"
-                x-on:blur="searching = false"
-                @keydown.enter="search"
-                @keydown.esc="searching = false"
-                x-show="searching"
-                x-ref="search"
-            />
-        </form>
+            {{ nav:main_menu }}
+            <a
+                class="{{ if is_current }} bg-gray-200 {{ /if }}px-5 py-2 font-semibold text-gray-900 mt-2 md:mt-0 md:mr-1 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200"
+                href="{{ url }}"
+                >{{ title }}</a
+            >
+            {{ /nav:main_menu }}
+
+            <button
+                class="hover:text-hot-pink transition-all duration-100 outline-none md:ml-20 md:mt-0 mt-4"
+                @click="searching = true; $nextTick(() => { $refs.search.focus() })"
+                aria-label="Search the site"
+            >
+                {{ svg src="search-{settings:personality}" class="w-6 h-6" }}
+            </button>
+            <form action="/search" x-show="searching" x-cloak>
+                <input
+                    name="q"
+                    type="text"
+                    class="w-40 outline-none px-2 py-1 ml-3"
+                    placeholder="Search for stuff"
+                    x-on:blur="searching = false"
+                    @keydown.enter="search"
+                    @keydown.esc="searching = false"
+                    x-show="searching"
+                    x-ref="search"
+                />
+            </form>
+        </nav>
     </div>
-</nav>
+</div>

@@ -1,37 +1,64 @@
-<article class="max-w-7xl mx-auto px-3">
+<article class="max-w-7xl mx-auto px-5 sm:px-3">
     <header>
-        <h1 class="text-2xl uppercase font-semibold tracking-wider my-4">
-            Latest Stories
-        </h1>
+        <div class="flex justify-between items-center">
+            <h1
+                class="text-1xl sm:text-2xl uppercase font-semibold tracking-wider my-4"
+            >
+                Latest Stories
+            </h1>
 
-        <div class="grid overflow-hidden grid-cols-3 grid-rows-2 gap-4">
-            {{ collection:blog featured:is="true" as="featured" limit="3"
-            sort="date:desc" }} {{ featured }} {{ partial:blog/header }} {{
-            /featured }} {{ /collection:blog }}
+            <a
+                href="/view-all"
+                class="text-base sm:text-lg text-blue-400 hover:text-blue-600"
+            >
+                View All
+                <div class="fas fa-arrow-right ml-1"></div>
+            </a>
+        </div>
+
+        <div
+            class="grid overflow-hidden grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-4"
+        >
+            {{ collection:blog featured:doesnt_exist="true" as="featured"
+            limit="3" sort="date:desc" }} {{ featured }} {{ partial:blog/header
+            }} {{ /featured }} {{ /collection:blog }}
         </div>
     </header>
 
-    <div class="flex justify-between items-center bg-gray-600 p-5 my-16">
-        <h1 class="text-xl text-white">
+    <!-- NEWSLETTER -->
+    <div
+        class="flex flex-col sm:flex-row justify-between items-center bg-gray-600 p-5 my-12"
+    >
+        <h1 class="text-base sm:text-xl text-white w-full">
             Subscribe to our newsletter and receive our weekly esports business
             news.
         </h1>
 
-        <div class="flex flex-between items-center">
+        <div
+            class="flex flex-between items-center justify-end flex-col sm:flex-row mt-8 sm:mt-0 overflow-hidden w-full"
+        >
             <input
                 type="text"
-                class="p-3 mr-3 w-80 outline-0 caret-pink-400 text-pink-400"
+                class="p-2 sm:p-3 sm:mr-3 w-full sm:w-80 outline-0 caret-pink-400 text-pink-400"
                 placeholder="Enter your email address"
             />
-            <button class="px-6 py-3 bg-pink-500 text-white font-semibold">
+            <button
+                class="sm:px-6 sm:py-3 px-3 py-2 bg-pink-500 text-white font-semibold mt-3 sm:mt-0 w-full sm:w-32"
+            >
                 Submit
             </button>
         </div>
     </div>
-
-    {{ collection:blog featured:exists="false" as="posts" paginate="10"
+    <!-- Featured Stories -->
+    <h1
+        class="text-1xl sm:text-2xl uppercase font-semibold tracking-wider my-4"
+    >
+        Featured Stories
+    </h1>
+    <!-- POST CARDS -->
+    {{ collection:blog featured:is="true" as="posts" paginate="12"
     sort="date:desc" }}
-    <section class="grid overflow-hidden grid-cols-3 gap-6">
+    <section class="grid overflow-hidden grid-cols-1 sm:grid-cols-3 gap-6">
         {{ posts }} {{ partial:blog/card :oversized="first" }} {{ /posts }}
     </section>
     {{ paginate }} {{ if $prev_page || $next_page }}

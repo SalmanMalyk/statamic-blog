@@ -1,0 +1,27 @@
+<article class="max-w-7xl mx-auto px-5 sm:px-3">
+    <header>
+        <h1
+            class="sm:text-2xl text-lg font-bold antialiased uppercase text-gray-800 my-4 sm:mb-8"
+        >
+            Showing all latest posts:
+        </h1>
+    </header>
+
+    {{ collection:blog as="posts" paginate="12" sort="date:desc" }}
+    <section class="grid overflow-hidden grid-cols-1 sm:grid-cols-3 gap-6">
+        {{ posts }} {{ partial:blog/card :oversized="first" }} {{ /posts }}
+    </section>
+    {{ paginate }} {{ if $prev_page || $next_page }}
+    <section class="flex space-x-8 justify-center text-xl pt-16 font-bold">
+        {{ if $prev_page }}
+        <a href="{{ $prev_page }}"
+            ><span class="squiggle">&larr;</span> Newer articles</a
+        >
+        {{ /if }} {{ if $next_page }}
+        <a href="{{ $next_page }}"
+            >Older articles <span class="squiggle">&rarr;</span></a
+        >
+        {{ /if }}
+    </section>
+    {{ /if }} {{ /paginate }} {{ /collection:blog }}
+</article>
