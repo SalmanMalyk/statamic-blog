@@ -1,11 +1,11 @@
 <div class="col-span-0 sm:col-span-1 md:mb-5">
     <div
-        class="relative h-56 w-full flex items-end justify-start text-left bg-cover bg-center rounded-xl"
+        class="relative h-56 w-full flex items-end justify-start text-left bg-cover bg-center"
         style="background-image: url({{ glide:hero_image }})"
     >
         {{ if tags }}
         <div
-            class="absolute top-0 mt-20 right-0 bottom-0 left-0 rounded-xl bg-gradient-to-b from-transparent to-gray-800 overflow-hidden"
+            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-800 overflow-hidden"
         ></div>
         <main class="p-5 z-10 overflow-auto">{{ partial:blog/tags }}</main>
         {{ /if }}
@@ -17,7 +17,7 @@
     <div class="flex flex-col h-full">
         <a
             href="{{ url }}"
-            class="overflow-hidden font-bold text-lg sm:text-2xl hover:text-blue-500 hover:underline mb-5 sm:mb-10"
+            class="overflow-hidden font-semibold text-lg sm:text-2xl hover:text-blue-500 hover:underline mb-5 sm:mb-10"
         >
             {{ title }}
         </a>

@@ -1,6 +1,6 @@
 .content {
     h1 {
-        @apply capitalize font-bold leading-snug;
+        @apply capitalize font-semibold leading-snug;
 
         /* font-size: min(max(1rem, 6.25vw), 2rem);
         @supports (font-size: clamp(1rem, 6.25vw, 2rem)) {

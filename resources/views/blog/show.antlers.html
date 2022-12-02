@@ -1,15 +1,11 @@
-<article class="max-w-7xl mx-auto px-5 sm:px-3">
-    <header class="mx-auto max-w-7xl text-center content">
-        <img
-            class="rounded-xl mb-3"
-            src="{{ $hero_image }}"
-            alt="{{ $hero_image:alt }}"
-        />
+<article class="mt-4">
+    <header class="text-center content">
+        <img class="mb-3" src="{{ $hero_image }}" alt="{{ $hero_image:alt }}" />
         {{ if tags }}
         <div class="my-4">{{ partial:blog/tags }}</div>
         {{ /if }}
     </header>
-    <section class="max-w-7xl mx-auto py-6 lg:py-12 content">
+    <section class="content">
         <div class="grid overflow-hidden md:grid-cols-4 grid-cols-1 gap-6">
             <!-- main content -->
             <div class="md:col-span-3">

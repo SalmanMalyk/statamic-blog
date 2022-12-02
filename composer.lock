@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aad621228f884e3f681cc3eca048b29e",
+    "content-hash": "33699cad5699cad37e1e46ff073ef0d1",
     "packages": [
         {
             "name": "aerni/social-links",

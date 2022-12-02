@@ -40,22 +40,15 @@
         ></script>
         <script src="{{ mix src='/js/site.js' }}"></script>
     </head>
-    <body
-        class="bg-white text-black font-body leading-normal personality-{{ $settings:personality }}"
-        x-data="{searching: false, open: false}"
-    >
-        <!-- logo  -->
-        {{ partial:topbar }}</div>
-
-        <!-- main content -->
-        <div class="grid overflow-hidden sm:grid-cols-9 grid-cols-1 gap-0">
-            <!--sidebar nav  -->
-            {{ partial:nav }}
-            <!-- main -->
-            <div class="sm:col-span-8">
-                <main class="sm:px-8">{{ $template_content }}</main>
+    <body x-data="{searching: false, open: true}">
+        <main class="min-h-screen container mx-auto overflow-hidden">
+            {{ partial:nav }} {{ partial:topbar }}
+            <div class="flex sm:px-16 px-4 w-full">
+                <div class="w-full sm:mt-28 mt-24" :class="{'ml-28': open}">
+                    {{ $template_content }}
+                </div>
             </div>
-        </div>
-        {{ partial:footer }} {{ partial:extras }}
+        </main>
+        {{ partial:footer }}
     </body>
 </html>

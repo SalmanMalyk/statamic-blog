@@ -1,13 +1,18 @@
-<div class="text-gray-700 bg-white my-10">
-    <div class="mx-auto pl-10">
-        <nav class="flex flex-col items-start w-full" x-show="!searching">
-            {{ nav:main_menu }}
-            <a
-                class="border-l-4 {{ if is_current }} border-slate-800 text-slate-800 font-bold {{ /if }} hover:text-slate-800 hover:border-slate-800 text-base transition-all antialiased pl-3 py-3 rounded"
-                href="{{ url }}"
-                >{{ title }}</a
-            >
-            {{ /nav:main_menu }}
-        </nav>
-    </div>
-</div>
+<aside
+    x-show="open"
+    class="sidebar-nav flex-col justify-center absolute left-0 p-5 top-52 sm:top-0"
+    :class="{'sm:flex': open}"
+    style="height: 100vh"
+    x-cloak
+>
+    <nav class="flex flex-col">
+        {{ nav:main_menu }}
+        <a
+            href="{{ url }}"
+            class="border-l-2 {{ if is_current || is_parent }} border-slate-800 text-slate-800 font-bold {{ /if }} hover:text-slate-800 hover:border-slate-800 text-base transition-all antialiased pl-3 py-3 rounded"
+        >
+            <span>{{ title }}</span>
+        </a>
+        {{ /nav:main_menu }}
+    </nav>
+</aside>
