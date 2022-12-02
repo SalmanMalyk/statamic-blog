@@ -1170,6 +1170,11 @@ pre > code .token.content > blockquote {
   margin-right: 1.25rem !important;
 }
 
+.my-10 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
 .mb-4 {
   margin-bottom: 1rem !important;
 }
