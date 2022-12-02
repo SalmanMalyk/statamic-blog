@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d72e83e1610a9742c332f4e1f969334",
+    "content-hash": "aad621228f884e3f681cc3eca048b29e",
     "packages": [
         {
             "name": "aerni/social-links",
@@ -1171,6 +1171,66 @@
                 }
             ],
             "time": "2022-09-10T18:51:20+00:00"
+        },
+        {
+            "name": "dryven/faviconator",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dryven/faviconator.git",
+                "reference": "5898fda3fb4cb84603f3f054968c3995ff0919a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dryven/faviconator/zipball/5898fda3fb4cb84603f3f054968c3995ff0919a5",
+                "reference": "5898fda3fb4cb84603f3f054968c3995ff0919a5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": "^7.3 || ^8.0",
+                "statamic/cms": "^3.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dryven\\Faviconator\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Faviconator",
+                    "description": "Adding favicons to your site the simple way.",
+                    "version": "1.0.1"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dryven\\Faviconator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "dryven",
+                    "email": "hallo@dryven.at",
+                    "homepage": "https://dryven.at/"
+                }
+            ],
+            "description": "Adding favicons to your site the simple way.",
+            "keywords": [
+                "Favicon Generator",
+                "favicon"
+            ],
+            "support": {
+                "email": "support@dryven.at",
+                "issues": "https://github.com/dryven/faviconator/issues",
+                "source": "https://github.com/dryven/faviconator/tree/v1.0.1"
+            },
+            "time": "2022-04-25T13:12:01+00:00"
         },
         {
             "name": "egulias/email-validator",

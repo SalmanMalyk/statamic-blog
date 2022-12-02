@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.1",
         "aerni/social-links": "^2.3",
+        "dryven/faviconator": "^1.0",
         "fruitcake/laravel-cors": "^2.0.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.0",

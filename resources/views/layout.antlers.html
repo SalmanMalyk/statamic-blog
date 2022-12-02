@@ -11,7 +11,10 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <title>{{ $title }} — {{ $settings:site_name }}</title>
+        <title>{{ $title }} ‹ {{ $settings:site_name }}</title>
+
+        {{ faviconator }}
+
         <meta
             name="description"
             content="{{ $intro | strip_tags | entities }}"
@@ -39,9 +42,20 @@
     </head>
     <body
         class="bg-white text-black font-body leading-normal personality-{{ $settings:personality }}"
+        x-data="{searching: false, open: false}"
     >
-        {{ partial:nav }}
-        <main class="py-6 lg:py-4">{{ $template_content }}</main>
+        <!-- logo  -->
+        {{ partial:topbar }}</div>
+
+        <!-- main content -->
+        <div class="grid overflow-hidden sm:grid-cols-9 grid-cols-1 gap-0">
+            <!--sidebar nav  -->
+            {{ partial:nav }}
+            <!-- main -->
+            <div class="sm:col-span-8">
+                <main class="sm:px-8">{{ $template_content }}</main>
+            </div>
+        </div>
         {{ partial:footer }} {{ partial:extras }}
     </body>
 </html>
