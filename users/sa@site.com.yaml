@@ -13,3 +13,8 @@ preferences:
         - featured
         - tags
         - related_posts
+  forms:
+    newsletter_subscription_form:
+      columns:
+        - datestamp
+        - email

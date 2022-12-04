@@ -18,29 +18,7 @@
     </header>
 
     <!-- NEWSLETTER -->
-    <div
-        class="flex flex-col sm:flex-row justify-between items-center bg-gray-600 p-5 my-6"
-    >
-        <h1 class="text-base sm:text-xl text-white w-full">
-            Subscribe to our newsletter and receive our weekly esports business
-            news.
-        </h1>
-
-        <div
-            class="flex flex-between items-center justify-end flex-col sm:flex-row mt-8 sm:mt-0 overflow-hidden w-full"
-        >
-            <input
-                type="text"
-                class="p-2 sm:p-3 sm:mr-3 w-full sm:w-80 outline-0 caret-pink-400 text-pink-400"
-                placeholder="Enter your email address"
-            />
-            <button
-                class="sm:px-6 sm:py-3 px-3 py-2 bg-pink-500 text-white font-semibold mt-3 sm:mt-0 w-full sm:w-32"
-            >
-                Submit
-            </button>
-        </div>
-    </div>
+    {{ partial:blog/newsletter }}
     <!-- Featured Stories -->
     <h1
         class="text-1xl sm:text-2xl uppercase font-semibold tracking-wider my-4"

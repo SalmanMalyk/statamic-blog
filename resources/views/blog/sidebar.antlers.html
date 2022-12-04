@@ -4,24 +4,24 @@
         <h1 class="text-2xl font-bold antialiased text-gray-800 sm:mb-8 mb-3">
             Share the story
         </h1>
-        <div class="flex flex-row space-x-8">
-            <a href="{{ social_links:facebook :url="permalink" :text="title" }}" target="_blank" class="text-gray-700 text-2xl sm:text-3xl hover:text-gray-500">
+        <div class="flex flex-row sm:space-x-8 space-x-4 overflow-auto">
+            <a href="{{ social_links:facebook :url="permalink" :text="title" }}" target="_blank" class="text-gray-700 text-1xl sm:text-3xl hover:text-gray-500">
                 <i class="fa-brands fa-square-facebook"></i>
             </a>
             
-            <a href="{{ social_links:linkedin :url="permalink" :title="title" }}" target="_blank" class="text-gray-700 text-2xl sm:text-3xl hover:text-gray-500">
+            <a href="{{ social_links:linkedin :url="permalink" :title="title" }}" target="_blank" class="text-gray-700 text-1xl sm:text-3xl hover:text-gray-500">
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
             
-            <a href="{{ social_links:twitter :url="permalink" :title="title" }}" target="_blank" class="text-gray-700 text-2xl sm:text-3xl hover:text-gray-500">
+            <a href="{{ social_links:twitter :url="permalink" :title="title" }}" target="_blank" class="text-gray-700 text-1xl sm:text-3xl hover:text-gray-500">
                 <i class="fa-brands fa-twitter"></i>
             </a>
             
-            <a href="{{ social_links:whatsapp :url="permalink" :title="title" }}" target="_blank" class="text-gray-700 text-2xl sm:text-3xl hover:text-gray-500">
+            <a href="{{ social_links:whatsapp :url="permalink" :title="title" }}" target="_blank" class="text-gray-700 text-1xl sm:text-3xl hover:text-gray-500">
                 <i class="fa-brands fa-square-whatsapp"></i>
             </a>
             
-            <a href="{{ social_links:mail :url="permalink" :subject="title" }}" target="_blank" class="text-gray-700 text-2xl sm:text-3xl hover:text-gray-500">
+            <a href="{{ social_links:mail :url="permalink" :subject="title" }}" target="_blank" class="text-gray-700 text-1xl sm:text-3xl hover:text-gray-500">
                 <i class="fa-solid fa-envelope"></i>
             </a>
         </div>

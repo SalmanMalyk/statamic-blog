@@ -1,0 +1,16 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: email
+        field:
+          placeholder: 'Your email address'
+          input_type: email
+          antlers: false
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
