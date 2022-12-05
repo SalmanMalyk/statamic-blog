@@ -1,0 +1,11 @@
+site_name: Tworeach
+site_logo: logo.png
+personality: casual
+show_signup: false
+social:
+  -
+    id: lb9gov99
+    name: Twitter
+    url: 'https://twitter.com'
+    icon: site/social-icons/twitter.svg
+origin: english

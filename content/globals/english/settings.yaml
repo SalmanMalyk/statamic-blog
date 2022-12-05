@@ -1,0 +1,9 @@
+site_name: Tworeach
+site_logo: logo.png
+personality: casual
+show_signup: false
+social:
+  -
+    id: lb9gpz91
+    name: Twitter
+    url: 'https://twitter.com'

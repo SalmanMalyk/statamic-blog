@@ -1439,6 +1439,18 @@ pre > code .token.content > blockquote {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))) !important;
 }
 
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0 !important;
+  margin-right: calc(0px * var(--tw-space-x-reverse)) !important;
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse))) !important;
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0 !important;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse)) !important;
+}
+
 .overflow-auto {
   overflow: auto !important;
 }
@@ -1538,6 +1550,11 @@ pre > code .token.content > blockquote {
 .bg-theme-s {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 229 0 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-zinc-100 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity)) !important;
 }
 
 .bg-gradient-to-b {
@@ -1754,6 +1771,10 @@ pre > code .token.content > blockquote {
   text-transform: uppercase !important;
 }
 
+.capitalize {
+  text-transform: capitalize !important;
+}
+
 .leading-none {
   line-height: 1 !important;
 }
@@ -1827,6 +1848,11 @@ pre > code .token.content > blockquote {
   color: rgb(55 65 81 / var(--tw-text-opacity)) !important;
 }
 
+.text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(18 21 30 / var(--tw-text-opacity)) !important;
+}
+
 .no-underline {
   text-decoration-line: none !important;
 }
@@ -1896,6 +1922,11 @@ pre > code .token.content > blockquote {
   background-color: rgb(250 204 21 / var(--tw-bg-opacity)) !important;
 }
 
+.hover\:bg-zinc-100:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity)) !important;
+}
+
 .hover\:text-hot-pink:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(253 45 120 / var(--tw-text-opacity)) !important;
@@ -1914,6 +1945,11 @@ pre > code .token.content > blockquote {
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(107 114 128 / var(--tw-text-opacity)) !important;
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(18 21 30 / var(--tw-text-opacity)) !important;
 }
 
 .hover\:underline:hover {
@@ -2022,6 +2058,18 @@ pre > code .token.content > blockquote {
     --tw-space-x-reverse: 0 !important;
     margin-right: calc(2rem * var(--tw-space-x-reverse)) !important;
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse))) !important;
+  }
+
+  .sm\:space-x-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0 !important;
+    margin-right: calc(0px * var(--tw-space-x-reverse)) !important;
+    margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse))) !important;
+  }
+
+  .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0 !important;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse))) !important;
+    margin-bottom: calc(0px * var(--tw-space-y-reverse)) !important;
   }
 
   .sm\:border-0 {

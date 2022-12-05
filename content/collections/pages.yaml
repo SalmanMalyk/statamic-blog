@@ -1,4 +1,8 @@
 title: Pages
+sites:
+  - english
+  - german
+propagate: false
 revisions: false
 route: '{parent_uri}/{slug}'
 structure:

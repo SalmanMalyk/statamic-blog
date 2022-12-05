@@ -1,4 +1,8 @@
 title: Blog
+sites:
+  - english
+  - german
+propagate: false
 template: blog/show
 layout: layout
 taxonomies:

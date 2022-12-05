@@ -4,7 +4,7 @@
             <h1
                 class="text-1xl sm:text-2xl uppercase font-semibold tracking-wider my-4"
             >
-                Latest Stories
+                {{ trans key="general.latest_stories" }}
             </h1>
         </div>
 
@@ -23,7 +23,7 @@
     <h1
         class="text-1xl sm:text-2xl uppercase font-semibold tracking-wider my-4"
     >
-        Featured Stories
+        {{ trans key="general.featured_stories" }}
     </h1>
     <!-- POST CARDS -->
     {{ collection:blog featured:is="true" as="posts" paginate="12"
